@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ganjil Genap</title>
+</head>
+<body>
+    <h1 th:text="${msg}"></h1>
+    <form  method="post", th:object="${number}">
+        <label>Number 1 : </label>
+        <input type="text" id="num1" name="num1">
+        <br>
+        <label>Number 2 : </label>
+        <input type="text" id="num2" name="num2">
+        <br>
+        <input type="submit" value="Cetak" th:formaction="@{/cetak}">
+        <input type="submit" value="Reset" th:formaction="@{/reset}">
+        
+    </form>
+    <table>
+        <tbody>
+            <tr th:each="cetak : ${cetaks}">
+                <td th:text="${cetak}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
